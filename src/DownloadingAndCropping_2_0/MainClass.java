@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by глеб on 05.08.2015.
+ * Created by ГЈГ«ГҐГЎ on 05.08.2015.
  */
 /*
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -43,7 +43,7 @@ class TaskListInitialize {
     TaskListInitialize(Queue taskQueue) {
 
         try {
-            FileReader reader = new FileReader("D:/1.txt");
+            FileReader reader = new FileReader("D:/URLpack.txt");
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject)jsonParser.parse(reader);
 
