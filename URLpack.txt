@@ -1,6 +1,6 @@
 {
 	"URLlist":[
-		"1http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg",
+		"http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg",
 		"http://cs622122.vk.me/v622122620/36ca0/cGZATT0cffI.jpg",
 		"http://cs622329.vk.me/v622329488/fa3a/Q8zLflngKr0.jpg",
 		"https://pp.vk.me/c623917/v623917709/461a6/wgrdNz3fNbQ.jpg",
@@ -10,7 +10,7 @@
 		"https://pp.vk.me/c623917/v623917648/4490d/8qms5DHLWcE.jpg",
 		"https://pp.vk.me/c623917/v623917185/40dff/--H3-0g7vfs.jpg",
 		"https://pp.vk.me/c623917/v623917008/453e2/wwSYx4a6FhE.jpg",
-		"https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg",
+		"https://111pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg",
 		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg",
 		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg",
 		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg",
