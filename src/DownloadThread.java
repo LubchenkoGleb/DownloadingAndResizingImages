@@ -1,34 +1,42 @@
-package DownloadingAndCropping_2_0;
+package com.shpp.lubchenko.learning.downloadAndresize_3_0;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.io.File;
 
 /**
- * Created by глеб on 10.08.2015.
+ * Created by ???? on 10.08.2015.
  */
 
 public class DownloadThread implements Runnable{
 
-    LinkedBlockingQueue<BufferedImage> downloadQueue = null;
-    Task task;
-
-    DownloadThread(Task task, LinkedBlockingQueue queue) {
-        this.task = task;
-        downloadQueue = queue;
-    }
+    static int pictureCount = 1;
 
     public void run() {
-        BufferedImage img;
-        try{
-            img = ImageIO.read(task.url);
-            if(img == null) return;
 
-        }catch (IOException e) {
-            e.printStackTrace();
-            return;
+        while(true) {
+
+            Task currentTask = MainClass.tasksQueue.poll();
+
+            if(currentTask.killTask) {
+                MainClass.resizeThreadQueue.addFirst(currentTask);
+                break;
+            }
+            else {
+                try {
+                    BufferedImage img = ImageIO.read(currentTask.url);
+
+                    if (img != null) {
+                        currentTask.name = "picture_" + pictureCount++ + ".png";
+                        currentTask.file = new File(MainClass.finalFolder + currentTask.name);
+                        ImageIO.write(img, "jpg", currentTask.file);
+                        MainClass.resizeThreadQueue.add(currentTask);
+                    }
+                } catch (Exception e) {
+                    System.out.println(currentTask.url);
+                    System.err.println("Image wasn't download");
+                }
+            }
         }
-        downloadQueue.add(img);
     }
 }
