@@ -1,25 +1,85 @@
-{
-	"URLlist":[
-		"http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg",
-		"http://cs622122.vk.me/v622122620/36ca0/cGZATT0cffI.jpg",
-		"http://cs622329.vk.me/v622329488/fa3a/Q8zLflngKr0.jpg",
-		"https://pp.vk.me/c623917/v623917709/461a6/wgrdNz3fNbQ.jpg",
-		"https://pp.vk.me/c623917/v623917674/3ca7c/qXkGzCbWj24.jpg",
-		"https://pp.vk.me/c623917/v623917150/3e228/MFD8ZbsGoBI.jpg",
-		"https://pp.vk.me/c623917/v623917967/3e49f/n8YVHQyPFoY.jpg",
-		"https://pp.vk.me/c623917/v623917648/4490d/8qms5DHLWcE.jpg",
-		"https://pp.vk.me/c623917/v623917185/40dff/--H3-0g7vfs.jpg",
-		"https://pp.vk.me/c623917/v623917008/453e2/wwSYx4a6FhE.jpg",
-		"https://111pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg",
-		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg",
-		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg",
-		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg",
-		"https://pp.vk.me/c623917/v623917270/3d2f4/3PxtiSIUv8c.jpg",
-		"https://pp.vk.me/c623917/v623917027/3ad55/kF-ODIIUOjE.jpg",
-		"https://pp.vk.me/c623919/v623919258/3f83b/-X7FYZHjOvY.jpg",
-		"https://pp.vk.me/c623917/v623917287/46d32/x7rRbbKYyA0.jpg",
-		"http://www.yolinux.com/TUTORIALS/images/tux-Java-t2.gif",
+{ 
+	"amountOfDownloadingThreads" : 16,
+	"amountOfResizingThreads" : 4,
+	"imageWidth" : 900,
+	"imageHeight" : 1100,
+	"URLlist":[ 
+ 		"https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg", 
+ 		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg", 
+ 		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg", 
+ 		"https://pp.vk.me/c623917/v623917270/3d2f4/3PxtiSIUv8c.jpg", 
+
+ 		"http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg", 
+ 		"http://cs622122.vk.me/v622122620/36ca0/cGZATT0cffI.jpg", 
+ 		"http://cs622329.vk.me/v622329488/fa3a/Q8zLflngKr0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917709/461a6/wgrdNz3fNbQ.jpg", 
+ 		"https://pp.vk.me/c623917/v623917674/3ca7c/qXkGzCbWj24.jpg", 
+ 		
+		"https://pp.vk.me/c623917/v623917150/3e228/MFD8ZbsGoBI.jpg", 
+		"https://pp.vk.me/c623917/v623917967/3e49f/n8YVHQyPFoY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917648/4490d/8qms5DHLWcE.jpg", 
+ 		"https://pp.vk.me/c623917/v623917185/40dff/--H3-0g7vfs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917008/453e2/wwSYx4a6FhE.jpg", 
+
+		"https://pp.vk.me/c623917/v623917027/3ad55/kF-ODIIUOjE.jpg", 
+ 		"https://pp.vk.me/c623919/v623919258/3f83b/-X7FYZHjOvY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917287/46d32/x7rRbbKYyA0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg", 
 		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg",
-	]
-}
-	
+
+
+		"https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg", 
+ 		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg", 
+ 		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg", 
+ 		"https://pp.vk.me/c623917/v623917270/3d2f4/3PxtiSIUv8c.jpg", 
+
+ 		"http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg", 
+ 		"http://cs622122.vk.me/v622122620/36ca0/cGZATT0cffI.jpg", 
+ 		"http://cs622329.vk.me/v622329488/fa3a/Q8zLflngKr0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917709/461a6/wgrdNz3fNbQ.jpg", 
+ 		"https://pp.vk.me/c623917/v623917674/3ca7c/qXkGzCbWj24.jpg", 
+ 		
+		"https://pp.vk.me/c623917/v623917150/3e228/MFD8ZbsGoBI.jpg", 
+		"https://pp.vk.me/c623917/v623917967/3e49f/n8YVHQyPFoY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917648/4490d/8qms5DHLWcE.jpg", 
+ 		"https://pp.vk.me/c623917/v623917185/40dff/--H3-0g7vfs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917008/453e2/wwSYx4a6FhE.jpg", 
+
+		"https://pp.vk.me/c623917/v623917027/3ad55/kF-ODIIUOjE.jpg", 
+ 		"https://pp.vk.me/c623919/v623919258/3f83b/-X7FYZHjOvY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917287/46d32/x7rRbbKYyA0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg", 
+		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg",
+
+		
+		"https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg", 
+ 		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg", 
+ 		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg", 
+ 		"https://pp.vk.me/c623917/v623917270/3d2f4/3PxtiSIUv8c.jpg", 
+
+ 		"http://cs540104.vk.me/c540106/v540106129/613b8/-FSMm1XvU2c.jpg", 
+ 		"http://cs622122.vk.me/v622122620/36ca0/cGZATT0cffI.jpg", 
+ 		"http://cs622329.vk.me/v622329488/fa3a/Q8zLflngKr0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917709/461a6/wgrdNz3fNbQ.jpg", 
+ 		"https://pp.vk.me/c623917/v623917674/3ca7c/qXkGzCbWj24.jpg", 
+ 		
+		"https://pp.vk.me/c623917/v623917150/3e228/MFD8ZbsGoBI.jpg", 
+		"https://pp.vk.me/c623917/v623917967/3e49f/n8YVHQyPFoY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917648/4490d/8qms5DHLWcE.jpg", 
+ 		"https://pp.vk.me/c623917/v623917185/40dff/--H3-0g7vfs.jpg", 
+ 		"https://pp.vk.me/c623917/v623917008/453e2/wwSYx4a6FhE.jpg", 
+
+		"https://1pp.vk.me/c623917/v623917027/3ad55/kF-ODIIUOjE.jpg", 
+ 		"https://pp.vk.me/c623919/v623919258/3f83b/-X7FYZHjOvY.jpg", 
+ 		"https://pp.vk.me/c623917/v623917287/46d32/x7rRbbKYyA0.jpg", 
+ 		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg", 
+		"https://pp.vk.me/c623917/v623917862/5e28c/3iKQhvNVI30.jpg",
+ 	] 
+} 
+
+
+
+ 		

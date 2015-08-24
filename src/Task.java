@@ -2,12 +2,11 @@ package com.shpp.lubchenko.learning.downloadAndresize_3_0;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.io.File;
-import java.io.FileReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -18,9 +17,9 @@ public class Task {
     String name;
     URL url;
     File file;
-    boolean killTask;
+    int killTask; // if killTask == 0 - usual Task, else if killTask == 1 - kill DonloadingThread, else if killTask == 2 - kill Resizing Task
 
-    public Task(boolean check) {
+    public Task(int check) {
         killTask = check;
     }
 
@@ -33,24 +32,23 @@ public class Task {
         }
     }
 
-    public static void TaskListInitialize(Queue taskQueue) {
+    public static void InitializeTaskList(int amountOfDownloadingThreads, int amountOfResizingThreads, Queue taskQueue, JSONObject jsonObject) {
 
-        try {
+        JSONArray jsonArray = (JSONArray)jsonObject.get("URLlist");
+        System.out.println(jsonArray.size() + " links was found");
 
-            FileReader reader = new FileReader(MainClass.URLPack);
-            JSONParser jsonParser = new JSONParser();
-            JSONObject jsonObject = (JSONObject)jsonParser.parse(reader);
+        for(int i=0; i<jsonArray.size(); i++) {
+            Task currentTask = new Task(jsonArray.get(i).toString());
+            if(currentTask.url != null)
+                taskQueue.add(currentTask);
+        }
+        System.out.println(taskQueue.size() + " links was checked and added");
+        for (int i = 0; i < amountOfDownloadingThreads - amountOfResizingThreads; i++) {
+            taskQueue.add(new Task(1));
+        }
+        for (int i = 0; i < amountOfResizingThreads; i++) {
+            taskQueue.add(new Task(2));
+        }
 
-            JSONArray jsonArray = (JSONArray)jsonObject.get("URLlist");
-            System.out.println(jsonArray.size() + " links was found");
-
-            for(int i=0; i<jsonArray.size(); i++) {
-                Task currentTask = new Task(jsonArray.get(i).toString());
-                if(currentTask.url != null)
-                    taskQueue.add(currentTask);
-            }
-            System.out.println(taskQueue.size() + " links was checked and added");
-
-        }catch (Exception ex) {}
     }
 }

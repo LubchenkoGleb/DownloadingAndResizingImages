@@ -4,19 +4,30 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class ResizeThread implements Runnable {
 
-    private static final int IMG_WIDTH = 1000;
-    private static final int IMG_HEIGHT = 1000;
+    public static int IMG_WIDTH;
+    public static int IMG_HEIGHT;
+    public static String finalFolder;
+    private LinkedBlockingQueue<Task> resizeQueue;
+    private Queue<Task> resaultQueue;
+
+    ResizeThread(LinkedBlockingQueue resizeQueue, Queue resaultQueue) {
+        this.resaultQueue = resaultQueue;
+        this.resizeQueue = resizeQueue;
+    }
 
     public void run() {
 
         while (true) {
-            try {
-                Task currentTask = MainClass.resizeThreadQueue.take();
 
-                if (currentTask.killTask)
+            try {
+                Task currentTask = resizeQueue.take();
+
+                if (currentTask.killTask == 2)
                     break;
                 else {
                     BufferedImage image = ImageIO.read(currentTask.file);
@@ -31,10 +42,12 @@ public class ResizeThread implements Runnable {
                     graphics.drawImage(image, 0, 0, IMG_WIDTH, IMG_HEIGHT, null);
                     graphics.dispose();
 
-                    ImageIO.write(resizedImage, "jpg", new File(MainClass.finalFolder + currentTask.name));
-                    MainClass.resizeThreadQueue.add(currentTask);
+                    ImageIO.write(resizedImage, "jpg", new File(finalFolder + currentTask.name));
+                    resaultQueue.add(currentTask);
                 }
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                System.err.println("null");
+            }
         }
     }
 }
