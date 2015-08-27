@@ -3,7 +3,6 @@ package com.shpp.lubchenko.learning.downloadAndresize_3_0;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -12,40 +11,38 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class DownloadThread implements Runnable{
 
-    public LinkedBlockingQueue<Task> resizeQueue;
-    public Queue<Task> tasksQueue;
-    public static String finalFolder;
+    public LinkedBlockingQueue<Task> downloadQueue, resizeQueue;
+    public Task currentTask;
 
-    DownloadThread(Queue tasksQueue, LinkedBlockingQueue resizeQueue) {
-        this.tasksQueue = tasksQueue;
+    DownloadThread(LinkedBlockingQueue downloadQueue, LinkedBlockingQueue resizeQueue) {
+        this.downloadQueue = downloadQueue;
         this.resizeQueue = resizeQueue;
     }
 
     public void run() {
 
         while(true) {
-            Task currentTask = tasksQueue.poll();
+            try {
+                currentTask = downloadQueue.take();
 
-            if(currentTask.killTask == 1)
-                break;
-            else if(currentTask.killTask == 2) {
-                resizeQueue.add(new Task(2));
-                break;
-            }
-            else {
-                try {
+                if(currentTask.killTask)
+                    break;
+                else {
                     BufferedImage img = ImageIO.read(currentTask.url);
 
-                    if (img != null) {
-                        currentTask.name = img.hashCode() + ".png"; //System.currentTimeMillis() % 100000 + ".png";
-                        currentTask.file = new File(finalFolder + currentTask.name);
-                        ImageIO.write(img, "jpg", currentTask.file);
-                        resizeQueue.add(currentTask);
-                    }
-                } catch (Exception e) {
-                    System.out.println(currentTask.url);
-                    System.err.println("Image wasn't download");
+                    currentTask.file = new File(Task.FINAL_FOLDER + currentTask.pictureName);
+                    ImageIO.write(img, "png", currentTask.file);
+                    resizeQueue.add(currentTask);
                 }
+            }catch (Exception e) {
+                currentTask.file = null;
+                resizeQueue.add(currentTask);
+                System.err.println(currentTask.url + " - Image wasn't download");
+            }
+
+            synchronized (Task.downloadQueueIsEmpty) {
+                if(downloadQueue.isEmpty())
+                    Task.downloadQueueIsEmpty.notify();
             }
         }
     }

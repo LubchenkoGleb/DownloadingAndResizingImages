@@ -1,10 +1,11 @@
 { 
+	"finalFolderPath" : "",
 	"amountOfDownloadingThreads" : 16,
 	"amountOfResizingThreads" : 4,
 	"imageWidth" : 900,
 	"imageHeight" : 1100,
 	"URLlist":[ 
- 		"https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg", 
+ 		"1https://pp.vk.me/c623917/v623917688/47359/D8gUv1Z1bRs.jpg", 
  		"https://pp.vk.me/c623917/v623917542/39f03/iG8DiZvJLuI.jpg", 
  		"https://pp.vk.me/c623917/v623917616/3cbab/kAS6ftDMhrc.jpg", 
  		"https://pp.vk.me/c623917/v623917355/41318/ZyfniQniyas.jpg", 
