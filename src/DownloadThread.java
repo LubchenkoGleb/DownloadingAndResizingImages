@@ -1,4 +1,4 @@
-package com.shpp.lubchenko.learning.downloadAndresize_3_0;
+package com.shpp.glubchenko.learning.downloadAndResize_4_0;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -6,13 +6,12 @@ import java.io.File;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Created by ???? on 10.08.2015.
+ * Created by glebl on 20.09.2015.
  */
 
 public class DownloadThread implements Runnable{
 
     public LinkedBlockingQueue<Task> downloadQueue, resizeQueue;
-    public Task currentTask;
 
     DownloadThread(LinkedBlockingQueue downloadQueue, LinkedBlockingQueue resizeQueue) {
         this.downloadQueue = downloadQueue;
@@ -21,29 +20,30 @@ public class DownloadThread implements Runnable{
 
     public void run() {
 
+        Task currentTask = null;
+
         while(true) {
+
             try {
                 currentTask = downloadQueue.take();
 
                 if(currentTask.killTask)
                     break;
-                else {
-                    BufferedImage img = ImageIO.read(currentTask.url);
+                else if(currentTask.e == null){
 
-                    currentTask.file = new File(Task.FINAL_FOLDER + currentTask.pictureName);
-                    ImageIO.write(img, "png", currentTask.file);
-                    resizeQueue.add(currentTask);
+                    BufferedImage img = ImageIO.read(currentTask.url);
+                    currentTask.file = new File(Task.finalForlder + currentTask.pictureName);
+                    ImageIO.write(img, "jpg", currentTask.file);
+
                 }
-            }catch (Exception e) {
-                currentTask.file = null;
-                resizeQueue.add(currentTask);
+
+            }catch (Exception exception) {
+
+                currentTask.e = exception;
                 System.err.println(currentTask.url + " - Image wasn't download");
             }
 
-            synchronized (Task.downloadQueueIsEmpty) {
-                if(downloadQueue.isEmpty())
-                    Task.downloadQueueIsEmpty.notify();
-            }
+            resizeQueue.add(currentTask);
         }
     }
 }
